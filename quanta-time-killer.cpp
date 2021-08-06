@@ -7,8 +7,8 @@ using std::cout, std::cin;
 int main(){
     std::string pickGame;
 
-    std::cout << "What would you like to play?: " << std::endl;
 	std::cout << "1: Conncet 4" << std::endl << "2: Chess" << std::endl << "3: Hangman" << std::endl << std::endl;
+    std::cout << "What would you like to play?: ";
 	std::cin >> pickGame;
 
 /*
