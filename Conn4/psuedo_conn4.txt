@@ -1,0 +1,78 @@
+#ifndef CONN4_H
+#define CONN4_H
+#include <./player.h>
+
+enum(X, O);
+
+class Conn4{
+public:
+	//std::string AssignTeams(Player player1, Player player2){};
+	std::string PrintBoard(){};
+	void Turn(Player player1, Player player2){};
+	void AddPiece(Player currPlayer){};
+	bool Win(std::string team);
+
+private:
+	std::string board[8][8];
+
+	//   1 2 3 4 5 6 7
+	//1  O
+	//2  O
+	//3  X
+	//4  X
+	//5  X
+	//6  X X X X O O O
+	//7  - - - - - - -
+
+}
+
+#endif
+
+void Conn4::Turn(Player player1, Player player2){
+	if (player1.goesFirst == true && player2.goesFirst == false){player1.goesFirst = false; player2.goesFirst = true;}
+	else { player1.goesFirst = true; player2.goesFirst = false; }
+}
+
+void Conn4::playConn4(){
+	std::cout << "Enter name of player 1: ";
+	std::cin >> player1.name;
+	std::cout << "Enter Player 1 team (X/O): ";
+	std::cin >> player1.team;
+
+	std::cout << "Enter name of player 2: ";
+	std::cin >> player2.name;
+
+	if ((rand()%2) == 0){ player1.goesFirst = true; std::cout << "Player 1 goes first." << std::endl; }
+	else { player2.goesFirst = true; std::cout << "Player 2 goes first." << std::endl; }
+
+	PrintBoard();
+
+	while (player1.hasWon == false && player2.hasWon == false){
+		if (player1.goesFirst == true){
+			std::cout << "Player 1: ";
+			std::cin >> colNum;
+
+			for (int i = 7; i >1; i--){
+				if (board[colNum+1][i+1] != " ")
+					board[colNum+1][i] = player1.team;
+			}
+			Win(player1.team);
+		}
+
+		std::cout << "Player 2: ";
+		std::cin >> colNum;
+
+		for (int i = 7; i >1; i--){
+			if (board[colNum+1][i+1] != " ")
+				board[colNum+1][i] = player2.team;
+		}
+		board.Win(player2.team);
+	}
+}
+
+Conn4{
+	
+	
+	
+	for (int i = 1; i < 8; i++){ board[0][i] = "0" + i; }	
+}
