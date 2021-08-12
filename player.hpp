@@ -4,13 +4,11 @@
 
 class Player{
 public:
-    void SetName(std::string newName) {playerName = newName;}
-    void SetTeam(char newTeam) {playerTeam = newTeam;}
-    
-    std::string GetName() {std::cout << playerName;}
-    char GetTeam() {std::cout << playerTeam;}
+    bool turn = false;
+    bool hasWon = false;
 
-private:
     std::string playerName;
     char playerTeam;
+
+    void NextTurn(Player nextPlayer){};
 };
