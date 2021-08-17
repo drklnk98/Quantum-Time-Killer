@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <time.h>
 #include "./player.hpp"
 
 void AddPiece(Player player, char board[8][8]);
@@ -61,7 +62,7 @@ void AddPiece(Player player, char board[8][8]){
 	std::cin >> loc;
 
 	while ( i > 0 && placed == false){
-		if (board[loc][i+1] == ' '){
+		if (board[loc][i+1] != ' '){
 			board[loc][i] == player.playerTeam;
 			placed = true;
 		}
@@ -74,6 +75,10 @@ void AddPiece(Player player, char board[8][8]){
 	}
 };
 
-void Won(Player player, char board[8][8]){};
+void GoesFirst(Player player1, Player player2){
+	srand(time(NULL));
+	if (rand()%2 == 0){player1.turn = true;}
+	else {player2.turn = true;}
+};
 
-void GoesFirst(Player player1, Player player2);
+void Won(Player player, char board[8][8]){};
