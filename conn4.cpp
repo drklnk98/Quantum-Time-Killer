@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <time.h>
+#include "./conn4.hpp"
 #include "./player.hpp"
 
 void AddPiece(Player player, char board[8][8]);
@@ -28,7 +29,12 @@ void Conn4(){
 
 	GoesFirst(player1, player2);
 
-	while (player1.hasWon == false && player2.hasWon == false){
+	if (player1.turn == true) { std::cout << player1.playerName << " goes first!" << std::endl; }
+	else if (player2.turn == true) { std::cout << player2.playerName << " goes first!" << std::endl; }
+
+	std::cout << board << std::endl;
+
+/*	while (player1.hasWon == false && player2.hasWon == false) {
 
 		if (player1.turn == true && player2.turn == false){
 
@@ -50,7 +56,7 @@ void Conn4(){
 	else
 		std::cout << player2.playerName << " has WON!" << std::endl;
 
-	}
+	}*/
 
 };
 

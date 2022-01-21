@@ -11,7 +11,10 @@ public:
     std::string playerName;
     char playerTeam;
 
-    void NextTurn(Player nextPlayer){};
+    void NextTurn(Player nextPlayer) {
+        this->turn = false;
+        nextPlayer.turn = true;
+    };
 };
 
 #endif
