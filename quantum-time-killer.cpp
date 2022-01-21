@@ -20,8 +20,5 @@ int main(){
 	std::cout << "Would you like to play another game? (Y/N): ";
 	std::cin >> playAgain?;
 
-	if (playAgain == "Y"){main();}
-	else{exit()};
-*/
 
 }
