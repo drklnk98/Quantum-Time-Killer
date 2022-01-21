@@ -3,7 +3,8 @@
 #include "./conn4.hpp"
 
 using std::string;
-using std::cout, std::cin;
+using std::cout;
+using std::cin;
 
 int main(){
     std::string pickGame, playAgain;

@@ -4,10 +4,6 @@
 #include "./conn4.hpp"
 #include "./player.hpp"
 
-void AddPiece(Player player, char board[8][8]);
-void Won(Player player, char board[8][8]);
-void GoesFirst(Player player1, Player player2);
-
 void Conn4(){
 	char board[8][8];
 	Player player1, player2;
