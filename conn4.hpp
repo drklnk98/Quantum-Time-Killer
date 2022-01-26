@@ -1,5 +1,5 @@
-#ifndef CONN4_H
-#define CONN4_H
+#ifndef CONN4_HPP
+#define CONN4_HPP
 
 #include "./player.hpp"
 
