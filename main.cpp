@@ -14,7 +14,6 @@ int main(){
     std::cout << "What would you like to play?: ";
 	std::cin >> pickGame;
 
-
 	if (pickGame == "1"){Conn4();}
 /*	else if () { PlayChess(); }
 	else if (){PlayHangman();}*/
